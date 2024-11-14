@@ -33,7 +33,7 @@ namespace E.Part.Inventory.WebApp.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            return View("Create",_repository.GetByIdAsync(id));
+            return View("Create",_repository.GetByIdAsync(id).Result);
         }
         [HttpPost]
         public IActionResult Edit(Category category)
