@@ -17,6 +17,7 @@ namespace E.Part.Inventory.WebApp.DataAccess.Repository
         public async Task CreateAsync(T entity)
         {
             await _context.Set<T>().AddAsync(entity);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<T> GetByIdAsync(int id)
@@ -24,7 +25,6 @@ namespace E.Part.Inventory.WebApp.DataAccess.Repository
             var entity = await _context.Set<T>().FirstOrDefaultAsync(s => s.Id == id);
             if (entity != null)
             {
-                _context.Set<T>().Remove(entity);
                 return entity;
             }
             throw new Exception($"Сутність типу {typeof(T)} з Id:{id} - не знайдено");

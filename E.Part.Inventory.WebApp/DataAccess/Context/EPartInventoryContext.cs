@@ -6,6 +6,9 @@ namespace E.Part.Inventory.WebApp.DataAccess.Context
 {
     public class EPartInventoryContext:DbContext
     {
+        public EPartInventoryContext(DbContextOptions<EPartInventoryContext> options): base(options) 
+        {}
+
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
 

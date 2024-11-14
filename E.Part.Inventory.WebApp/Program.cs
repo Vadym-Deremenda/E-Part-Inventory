@@ -1,7 +1,16 @@
+using E.Part.Inventory.WebApp.DataAccess.Context;
+using E.Part.Inventory.WebApp.DataAccess.IRepository;
+using E.Part.Inventory.WebApp.DataAccess.Repository;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped(typeof(ICrudRepository<>),typeof(CrudRepository<>));
+
+builder.Services.AddDbContext<EPartInventoryContext>(options=>options.UseSqlite("Data Source=EPartInventoryDb.sql"));
 
 var app = builder.Build();
 
