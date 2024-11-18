@@ -1,65 +1,83 @@
 ﻿@model E.Part.Inventory.WebApp.DataAccess.Entityes.Product
-
 @{
-    ViewData["Title"] = "Create";
+    if (Model != null)
+    {
+        ViewData["Title"] = "Edit";
+        <h1>Edit</h1>
+    }
+    else
+    {
+        ViewData["Title"] = "Create";
+        <h1>Create</h1>
+    }
 }
 
-<h1>Create</h1>
 
 <h4>Product</h4>
-<hr />
+<hr/>
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="ProductName" class="control-label"></label>
-                <input asp-for="ProductName" class="form-control" />
+                <input asp-for="ProductName" class="form-control"/>
                 <span asp-validation-for="ProductName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Manufacturer" class="control-label"></label>
-                <input asp-for="Manufacturer" class="form-control" />
+                <input asp-for="Manufacturer" class="form-control"/>
                 <span asp-validation-for="Manufacturer" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ProductCode" class="control-label"></label>
-                <input asp-for="ProductCode" class="form-control" />
+                <input asp-for="ProductCode" class="form-control"/>
                 <span asp-validation-for="ProductCode" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ProductDescription" class="control-label"></label>
-                <input asp-for="ProductDescription" class="form-control" />
+                <input asp-for="ProductDescription" class="form-control"/>
                 <span asp-validation-for="ProductDescription" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CategoryId" class="control-label"></label>
-                <input asp-for="CategoryId" class="form-control" />
+                <input asp-for="CategoryId" class="form-control"/>
                 <span asp-validation-for="CategoryId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Price" class="control-label"></label>
-                <input asp-for="Price" class="form-control" />
+                <input asp-for="Price" class="form-control"/>
                 <span asp-validation-for="Price" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Currency" class="control-label"></label>
-                <input asp-for="Currency" class="form-control" />
+                <input asp-for="Currency" class="form-control"/>
                 <span asp-validation-for="Currency" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="QuantityInStock" class="control-label"></label>
-                <input asp-for="QuantityInStock" class="form-control" />
+                <input asp-for="QuantityInStock" class="form-control"/>
                 <span asp-validation-for="QuantityInStock" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Id" class="control-label"></label>
-                <input asp-for="Id" class="form-control" />
+                <input asp-for="Id" class="form-control"/>
                 <span asp-validation-for="Id" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
+            @{
+                if (Model != null)
+                {
+                    <div class="form-group">
+                        <input asp-action="Edit" type="submit" value="Edit" class="btn btn-primary"/>
+                    </div>
+                }
+                else
+                {
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary"/>
+                    </div>
+                }
+            }
         </form>
     </div>
 </div>
@@ -69,5 +87,5 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
 }
