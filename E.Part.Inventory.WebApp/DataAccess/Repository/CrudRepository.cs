@@ -32,9 +32,14 @@ namespace E.Part.Inventory.WebApp.DataAccess.Repository
 
         public async Task UpdateAsync(T entity)
         {
-            var _entity = await GetByIdAsync(entity.Id);
-            _entity=entity;
-            await _context.SaveChangesAsync();
+            if (await _context.Set<T>().FindAsync(entity.Id) is T found)
+            {
+                _context.Set<T>().Entry(found).State = EntityState.Detached;
+                _context.Set<T>().Update(entity);
+                await _context.SaveChangesAsync();
+                return;
+            }
+            throw new Exception("Error Update");
         }
 
         public async Task DeleteAsync(int id)
