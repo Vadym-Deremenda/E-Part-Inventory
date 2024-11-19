@@ -76,6 +76,32 @@ namespace E.Part.Inventory.WebApp.Migrations
                     b.ToTable("Products", (string)null);
                 });
 
+            modelBuilder.Entity("E.Part.Inventory.WebApp.DataAccess.Entityes.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .IsUnicode(true)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("User");
+                });
+
             modelBuilder.Entity("E.Part.Inventory.WebApp.DataAccess.Entityes.Product", b =>
                 {
                     b.HasOne("E.Part.Inventory.WebApp.DataAccess.Entityes.Category", "ProductCategory")
