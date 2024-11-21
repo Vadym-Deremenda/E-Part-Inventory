@@ -21,6 +21,6 @@ public class OrderConfiguration:IEntityTypeConfiguration<Order>
 
         builder.HasMany(o => o.Products)
             .WithMany(p => p.Orders)
-            .UsingEntity(e => e.ToTable("OrderDetails"));
+            .UsingEntity<OrderDetails>();
     }
 }
