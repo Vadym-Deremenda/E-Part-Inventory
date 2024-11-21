@@ -3,6 +3,7 @@ using System;
 using E.Part.Inventory.WebApp.DataAccess.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace E.Part.Inventory.WebApp.Migrations
 {
     [DbContext(typeof(EPartInventoryContext))]
-    partial class EPartInventoryContextModelSnapshot : ModelSnapshot
+    [Migration("20241121205902_fix product table")]
+    partial class fixproducttable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.5");

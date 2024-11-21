@@ -9,7 +9,7 @@
         public int CategoryId { get; set; }
         public decimal Price { get; set; }
         public string? Currency { get; set; }
-        public string? QuantityInStock { get; set; }
+        public int? QuantityInStock { get; set; }
 
         public virtual Category ProductCategory { get; set; }
         internal virtual ICollection<OrderDetails> OrderDetails { get; set; }
