@@ -11,6 +11,8 @@
         public string? Currency { get; set; }
         public string? QuantityInStock { get; set; }
 
-        public virtual Category? ProductCategory { get; set; }
+        public virtual Category ProductCategory { get; set; }
+        internal virtual ICollection<OrderDetails> OrderDetails { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

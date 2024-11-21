@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace E.Part.Inventory.WebApp.DataAccess.Context.Configuration
+namespace E.Part.Inventory.WebApp.DataAccess.Configuration
 {
     public class CategoryConfiguration : IEntityTypeConfiguration<Category>
     {
