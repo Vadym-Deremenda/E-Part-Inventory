@@ -2,7 +2,34 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mt-5">
+    <div class="row">
+        <!-- Перша картка: Create Order -->
+        <div class="col-md-6">
+            <div class="card text-center">
+                <div class="card-header bg-primary text-white">
+                    Create Order
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Створіть нове замовлення</h5>
+                    <p class="card-text">Натисніть кнопку нижче, щоб перейти до сторінки створення замовлення.</p>
+                    <a href="@Url.Action("Create", "Orders")" class="btn btn-primary">Перейти</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Друга картка: Order History -->
+        <div class="col-md-6">
+            <div class="card text-center">
+                <div class="card-header bg-success text-white">
+                    Order History
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Історія замовлень</h5>
+                    <p class="card-text">Перегляньте список ваших попередніх замовлень.</p>
+                    <a href="@Url.Action("History", "Orders")" class="btn btn-success">Переглянути</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

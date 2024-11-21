@@ -19,7 +19,7 @@ namespace E.Part.Inventory.WebApp.Migrations
 
             modelBuilder.Entity("E.Part.Inventory.WebApp.DataAccess.Entityes.Category", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ProductId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -30,7 +30,7 @@ namespace E.Part.Inventory.WebApp.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Id");
+                    b.HasKey("ProductId");
 
                     b.ToTable("Categories", (string)null);
                 });
@@ -81,7 +81,7 @@ namespace E.Part.Inventory.WebApp.Migrations
 
             modelBuilder.Entity("E.Part.Inventory.WebApp.DataAccess.Entityes.Product", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ProductId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -114,7 +114,7 @@ namespace E.Part.Inventory.WebApp.Migrations
                         .IsRequired()
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("Id");
+                    b.HasKey("ProductId");
 
                     b.HasIndex("CategoryId");
 
@@ -123,7 +123,7 @@ namespace E.Part.Inventory.WebApp.Migrations
 
             modelBuilder.Entity("E.Part.Inventory.WebApp.DataAccess.Entityes.User", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ProductId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -142,7 +142,7 @@ namespace E.Part.Inventory.WebApp.Migrations
                         .IsUnicode(true)
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Id");
+                    b.HasKey("ProductId");
 
                     b.ToTable("Users");
                 });

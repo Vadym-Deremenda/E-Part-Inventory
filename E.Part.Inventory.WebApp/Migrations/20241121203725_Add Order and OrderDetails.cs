@@ -22,7 +22,7 @@ namespace E.Part.Inventory.WebApp.Migrations
             migrationBuilder.AddPrimaryKey(
                 name: "PK_Users",
                 table: "Users",
-                column: "Id");
+                column: "ProductId");
 
             migrationBuilder.CreateTable(
                 name: "Orders",
@@ -62,7 +62,7 @@ namespace E.Part.Inventory.WebApp.Migrations
                         name: "FK_OrderDetails_Products_ProductId",
                         column: x => x.ProductId,
                         principalTable: "Products",
-                        principalColumn: "Id",
+                        principalColumn: "ProductId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -92,7 +92,7 @@ namespace E.Part.Inventory.WebApp.Migrations
             migrationBuilder.AddPrimaryKey(
                 name: "PK_User",
                 table: "User",
-                column: "Id");
+                column: "ProductId");
         }
     }
 }
