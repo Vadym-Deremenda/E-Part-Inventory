@@ -1,0 +1,38 @@
+@model IEnumerable<E.Part.Inventory.WebApp.DTOs.OrderHistoryDto>
+
+@{
+    ViewData["Title"] = "Order History";
+}
+<div class="container mt-5">
+    <h2>Історія замовлень</h2>
+    <table class="table table-striped mt-3">
+        <thead class="thead-dark">
+        <tr>
+            <th>Order ID</th>
+            <th>Order Date</th>
+            <th>User ID</th>
+            <th>Total</th>
+        </tr>
+        </thead>
+        <tbody>
+        @if (Model != null && Model.Any())
+        {
+        foreach (var order in Model)
+        {
+        <tr>
+            <td>@order.OrederId</td>
+            <td>@order.OrderDate.ToString("yyyy-MM-dd HH:mm")</td>
+            <td>@order.UserId</td>
+            <td>@order.Total</td>
+        </tr>
+        }
+        }
+        else
+        {
+        <tr>
+            <td colspan="4" class="text-center">Немає замовлень для відображення</td>
+        </tr>
+        }
+        </tbody>
+    </table>
+</div>
