@@ -15,6 +15,7 @@ builder.Services.AddDbContext<EPartInventoryContext>(options=>options.UseSqlite(
 //Add Services
 builder.Services.AddScoped<OrderServices>();
 builder.Services.AddScoped<ProductServices>();
+builder.Services.AddScoped<CategoryServies>();
 
 var app = builder.Build();
 
@@ -31,8 +32,10 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
 
 app.Run();

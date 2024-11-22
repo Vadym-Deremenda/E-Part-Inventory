@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Admin Panel";
+}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Керування Категоріями</h4>
+                </div>
+                <div class="card-body">
+                    <p>В цьому розділі ви можете додавати, редагувати та видаляти категорії.</p>
+                    <a href="@Url.Action("Index", "Categories")" class="btn btn-primary">Перейти до категорій</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Керування Продуктами</h4>
+                </div>
+                <div class="card-body">
+                    <p>В цьому розділі ви можете додавати, редагувати та видаляти продукти.</p>
+                    <a href="@Url.Action("Index", "Products")" class="btn btn-primary">Перейти до продуктів</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

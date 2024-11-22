@@ -23,8 +23,6 @@
   <ItemGroup>
     <_ContentIncludedByDefault Remove="Views\Products\Create.cshtml" />
     <_ContentIncludedByDefault Remove="Views\Products\Index.cshtml" />
-    <_ContentIncludedByDefault Remove="Views\Categories\Create.cshtml" />
-    <_ContentIncludedByDefault Remove="Views\Categories\Index.cshtml" />
     <_ContentIncludedByDefault Remove="Pages\Orders\History.cshtml" />
   </ItemGroup>
 
