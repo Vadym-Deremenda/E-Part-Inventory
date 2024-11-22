@@ -10,7 +10,7 @@ public class MappingProfile : Profile
     public MappingProfile()
     {
         CreateMap<Order, OrderHistoryDto>()
-            .ForMember(dest => dest.OrederId, opt => opt.MapFrom(src => src.OrederId))
+            .ForMember(dest => dest.OrderId, opt => opt.MapFrom(src => src.OrederId))
             .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.UserId))
             .ForMember(dest => dest.OrderDate, opt => opt.MapFrom(src => src.OrderDate))
             .ForMember(dest => dest.Total, opt => opt.MapFrom(src => src.Total));

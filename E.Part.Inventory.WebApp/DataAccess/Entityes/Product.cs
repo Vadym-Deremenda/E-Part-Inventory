@@ -1,7 +1,8 @@
 ﻿namespace E.Part.Inventory.WebApp.DataAccess.Entityes
 {
-    public class Product : BaseEntity
+    public class Product 
     {
+        public int Id { get; set; }
         public string? ProductName { get; set; }
         public string? Manufacturer { get; set; }
         public string? ProductCode { get; set; }

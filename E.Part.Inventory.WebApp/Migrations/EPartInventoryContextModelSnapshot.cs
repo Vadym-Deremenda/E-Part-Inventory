@@ -37,7 +37,7 @@ namespace E.Part.Inventory.WebApp.Migrations
 
             modelBuilder.Entity("E.Part.Inventory.WebApp.DataAccess.Entityes.Order", b =>
                 {
-                    b.Property<int>("OrederId")
+                    b.Property<int>("OrderId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -50,7 +50,7 @@ namespace E.Part.Inventory.WebApp.Migrations
                     b.Property<int>("UserId")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("OrederId");
+                    b.HasKey("OrderId");
 
                     b.ToTable("Orders");
                 });
